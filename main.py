@@ -1,1 +1,7 @@
-uvicorn main:fastapi_app --host 0.0.0.0 --port 10000
+from fastapi import FastAPI
+
+fastapi_app = FastAPI()
+
+@fastapi_app.get("/")
+def read_root():
+    return {"Hello": "World"}
